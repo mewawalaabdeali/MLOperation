@@ -27,7 +27,7 @@ stages:
     - feature_engineering.max_features
     outs:
     - data/processed
-    - models/vectorizer.pkl
+    
 
   model_building:
     cmd: python src/models/model_building.py

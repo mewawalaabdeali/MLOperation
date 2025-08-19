@@ -59,7 +59,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     """Load data from a CSV file"""
     try:
         df = pd.read_csv(file_path)
-        logger.debug('Data loaded from %s'. file_path)
+        logger.debug('Data loaded from %s', file_path)
         return df
     except pd.errors.ParserError as e:
         logger.error('Failed to parse the CSV file: %s', e)
@@ -145,7 +145,7 @@ def main():
             mlflow.log_artifact('reports/metrics.json')
 
             # Log the model info file to MLflow
-            mlflow.log_artifact('reports/model_info.json')
+            mlflow.log_artifact('reports/experiment_info.json')
 
             # Log the evaluation errors log file to MLflow
             mlflow.log_artifact('model_evaluation_errors.log')
