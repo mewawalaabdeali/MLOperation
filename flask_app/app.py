@@ -11,7 +11,7 @@ import string
 import pickle
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from preprocessing_utility import normalize_text
+from flask_app.preprocessing_utility import normalize_text
 
 #Setup Dagshub Credentials for MLFlow tracking
 dagshub_token = os.getenv("DAGSHUB_PAT")
