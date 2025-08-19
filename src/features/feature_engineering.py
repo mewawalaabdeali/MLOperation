@@ -74,10 +74,10 @@ def apply_bow(train_data: pd.DataFrame, test_data: pd.DataFrame, max_features: i
         test_df = pd.DataFrame(X_test_bow.toarray())
         test_df['label'] = y_test
 
-        pickle.dump(vectorizer, open('models/vectorizer.pkl', 'wb'))
-
-
-
+        vectorizer_path = os.path.join('models', 'vectorizer.pkl')
+        os.makedirs(os.path.dirname(vectorizer_path), exist_ok=True)
+        with open(vectorizer_path, 'wb') as f:
+            pickle.dump(vectorizer, f)
         logger.debug('Bag of Words applied and data transformed')
         return train_df, test_df
     except Exception as e:
